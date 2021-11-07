@@ -4,15 +4,15 @@ app = Flask(__name__)
 
 @app.route('/')
 def homepage():
-    return "Hello World"
+    return "Show Table Here"
 
-@app.route('/table')
-def tablepage():
-    return "Chelsea on top"
+@app.route('/teams')
+def teamspage():
+    return render_template('teams.html')
 
 @app.route('/about')
 def aboutpage():
-    return "Premier League is great"
+    return render_template('about.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
