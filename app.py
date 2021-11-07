@@ -1,14 +1,15 @@
 from flask import Flask, render_template
 
+from controllers.teams_controller import teams_blueprint
+
+
 app = Flask(__name__)
+
+app.register_blueprint(teams_blueprint)
 
 @app.route('/')
 def homepage():
     return render_template('table.html', title= "Table")
-
-@app.route('/teams')
-def teamspage():
-    return render_template('teams.html', title="Teams")
 
 @app.route('/about')
 def aboutpage():
