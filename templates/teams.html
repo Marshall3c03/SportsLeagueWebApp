@@ -2,6 +2,16 @@
 
 {% block content %}
 
-Teams go here
+<form method="get" action="/newteam">
+    <button type="submit">Add Team</button>
+</form>
+
+{% for team in all_teams %}
+
+<div class="team">
+    <p>{{team.name}}</p>
+</div>
+
+{% endfor %}
 
 {% endblock %}
