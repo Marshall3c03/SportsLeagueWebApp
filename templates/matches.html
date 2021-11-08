@@ -2,6 +2,18 @@
 
 {% block content %}
 
-Matches go here
+<form method="get" action="/newmatch">
+    <button type="submit">Add Match</button>
+</form>
+
+<br>
+
+{% for team in all_teams %}
+
+<div class="match">
+    <a href="/match/{{match.id}}">{{match.home_team}}</a>
+</div>
+
+{% endfor %}
 
 {% endblock %}

@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<form action="/matches" method="post">
+
+  <div>
+    <label for="home_team">Home Team:</label>
+    <select id="home_team" name="home_team_id">
+      {% for team in all_teams %}
+      <option value="{{team.id}}">{{team.name}}</option>
+      {% endfor %}
+    </select>
+  </div>
+
+  <br>
+
+  <div>
+    <label for="away_team">Away Team:</label>
+    <select id="away_team" name="away_team_id">
+      {% for team in all_teams %}
+      <option value="{{team.id}}">{{team.name}}</option>
+      {% endfor %}
+    </select>
+  </div>
+
+  <br>
+
+  <div>
+    <label for="home_team">Home Team:</label>
+    <select id="home_team" name="home_team_id">
+      <option value="home_win">Home Win</option>
+      <option value="away_win">Away Win</option>
+      <option value="draw">Draw</option>
+    </select>
+  </div>
+
+  <br>
+
+  <div>
+      <button type="submit">Add Match</button>
+  </div>
+   
+  </form>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div>
+    <p>
+        <b>{{team.name}}</b>
+    </p>
+    <p>
+        Position: {{team.position}}
+    </p>
+    <hr>
+    <p>
+        Wins: {{team.wins}} 
+    </p>
+    <p>
+        Draws: {{team.draws}}
+    </p>
+    <p>
+        Loses: {{team.loses}} 
+    </p>
+    <p>
+        Points: {{team.points}}
+    </p>
+
+    <form action="/teams/{{team.id}}/edit" method="GET">
+        <div>
+          <button type="edit">Edit</button>
+        </div>
+</div>
+</form>
+<form action="/teams/{{team.id}}/delete" method="POST">
+  <div>
+    <button type="delete">Delete</button>
+</div>
+
+{% endblock %}
