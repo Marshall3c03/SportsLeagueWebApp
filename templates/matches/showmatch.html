@@ -4,20 +4,18 @@
 
 <div>
     <p>
-        {{match.home_team.name}}
+        {{match.home_team.name}} Vs {{match.away_team.name}} 
     </p>
     <hr>
-    <p>
-        {{match.away_team.name}} 
-    </p>
+    <p>{{match.result}}</p>
 
-    <form action="/teams/{{team.id}}/edit" method="GET">
+    <form action="/matches/{{match.id}}/edit" method="GET">
         <div>
           <button type="edit">Edit</button>
         </div>
 </div>
 </form>
-<form action="/teams/{{team.id}}/delete" method="POST">
+<form action="/match/{{match.id}}/delete" method="POST">
   <div>
     <button type="delete">Delete</button>
 </div>

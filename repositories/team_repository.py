@@ -1,3 +1,5 @@
+import pdb
+
 from db.run_sql import run_sql
 
 from models.team import Team
@@ -17,6 +19,7 @@ def select(id):
     team = None
     sql = "SELECT * FROM teams WHERE id = %s"
     values = [id]
+    # pdb.set_trace()
     result = run_sql(sql,values)[0]
 
     if result is not None:

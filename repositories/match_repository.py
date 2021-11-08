@@ -9,6 +9,9 @@ def save(match):
     sql = "INSERT INTO matches (home_team_id, away_team_id, result) VALUEs (%s,%s,%s) RETURNING *"
     values = [match.home_team.id,match.away_team.id,match.result]
     result = run_sql(sql,values)
+    match_id = result[0]['id']
+    match.id = match_id
+    return match
 
 def select_all():
     matches = []
@@ -26,13 +29,10 @@ def select_all():
 def select(id):
     sql = "SELECT * FROM matches WHERE id = %s"
     values = [id]
-    result = run_sql(sql,values)
-    
-    if result is not None and len(result) > 0:
-        home_team = team_repository.select(result[0]['home_team_id'])
-        away_team = team_repository.select(result[0]['away_team_id'])
-        match = Match(home_team ,away_team ,result[0]['result'],result[0]['id'])
-    
-        return match
-    else:
-        return Match('None','None','None')
+    result = run_sql(sql,values)[0]
+
+    if result is not None:
+        home_team = team_repository.select(result['home_team_id'])
+        away_team = team_repository.select(result['away_team_id'])
+        match = Match(home_team ,away_team ,result['result'],result['id'])
+    return match

@@ -1,4 +1,4 @@
-import re
+import pdb
 from flask import Flask, render_template, request, redirect
 from flask import Blueprint
 from models.match import Match
@@ -19,15 +19,23 @@ def newmatch():
 
 @matches_blueprint.route('/matches', methods=['POST'])
 def creatematch():
+    # pdb.set_trace()
     home_team_id = request.form['home_team_id']
-    home_team = match_repository.select(home_team_id)
+    home_team = team_repository.select(home_team_id)
     away_team_id = request.form['away_team_id']
-    away_team = match_repository.select(away_team_id)
+    away_team = team_repository.select(away_team_id)
     result = request.form['result']
 
     newmatch = Match(home_team, away_team, result)
     match_repository.save(newmatch)
     return redirect('/matches')
 
-@matches_blueprint.route('/match/<id>')
-def show_match
+@matches_blueprint.route('/match/<id>', methods=['GET'])
+def show_match(id):
+    match = match_repository.select(id)
+    return render_template('matches/showmatch.html', match = match)
+
+@matches_blueprint.route('/matches/<id>/edit', methods=['GET'])
+def edit_match(id):
+    match = match_repository.select(id)
+    return render_template('/matches/editmatches.html', match=match)
