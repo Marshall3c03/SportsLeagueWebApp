@@ -27,5 +27,10 @@
         <a href="/teams/{{team.id}}/edit">Edit</a>
     </p>
 </div>
+</form>
+<form action="/teams/{{team.id}}/delete" method="POST">
+  <div>
+    <button type="delete">Delete</button>
+  </div>
 
 {% endblock %}

@@ -52,4 +52,9 @@ def update_team(id):
     team = Team(name, position,gamesplayed,wins,draws,loses,points,id)
     team_repository.update(team)
     return redirect('/teams')
+
+@teams_blueprint.route('/teams/<id>/delete', methods=['POST'])
+def delete_team(id):
+    team_repository.delete(id)
+    return redirect('/teams')
     
