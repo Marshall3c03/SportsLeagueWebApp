@@ -2,39 +2,32 @@
 
 {% block content %}
 
-<form action="/matches/{{match.id}}" method="post">
+<form action="/matches" method="post">
 
     <div>
-      <label for="teamname">Team Name:</label>
-      <input type="text" id="teamname" name="teamname" value="{{team.name}}" required autofocus>
+        <label for="home_team">Home Team:</label>
+        <select id="home_team" name="home_team_id">
+          {% for team in all_teams %}
+            <option value="{{team.id}}">
+              {{ team.name }}
+            </option>
+          {% endfor %}
+        </select>
     </div>
 
     <div>
-        <label for="position">Position:</label>
-        <input type="text" id="position" name="position" Value="{{team.position}}" required autofocus>
-    </div>
-    <div>
-        <label for="gamesplayed">Games Played:</label>
-        <input type="text" id="gamesplayed" name="gamesplayed" value="{{team.gamesplayed}}" required autofocus>
-      </div>
-    <div>
-        <label for="wins">Wins:</label>
-        <input type="text" id="wins" name="wins" value="{{team.wins}}" required autofocus>
-    </div>
-    <div>
-        <label for="draws">Draws:</label>
-        <input type="text" id="draws" name="draws" value="{{team.draws}}" required autofocus>
-    </div>
-    <div>
-        <label for="loses">Loses:</label>
-        <input type="text" id="loses" name="loses" value="{{team.loses}}" required autofocus>
-      </div>
-    <div>
-        <label for="points">Points:</label>
-        <input type="text" id="points" name="points" value="{{team.points}}" required autofocus>
+        <label for="away_team">Away Team:</label>
+        <select id="away_team" name="away_team_id">
+          {% for team in all_teams %}
+            <option value="{{team.id}}">
+              {{ team.name }}
+            </option>
+          {% endfor %}
+        </select>
     </div>
 
-      
+
+
     <div>
         <button type="submit">Update Team</button>
     </div>

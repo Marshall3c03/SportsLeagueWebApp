@@ -6,7 +6,7 @@ from models.match import Match
 import repositories.team_repository as team_repository
 
 def save(match):
-    sql = "INSERT INTO matches (home_team_id, away_team_id, result) VALUEs (%s,%s,%s) RETURNING *"
+    sql = "INSERT INTO matches (home_team_id, away_team_id, result) VALUES (%s,%s,%s) RETURNING *"
     values = [match.home_team.id,match.away_team.id,match.result]
     result = run_sql(sql,values)
     match_id = result[0]['id']
@@ -36,3 +36,14 @@ def select(id):
         away_team = team_repository.select(result['away_team_id'])
         match = Match(home_team ,away_team ,result['result'],result['id'])
     return match
+
+def update(match):
+    sql = "UPDATE matches SET (home_team_id, away_team_id, result) VALUES (%s,%s,%s) WHERE id = %s"
+    values = [match.home_team_id.id, match.away_team_id.id, match.result, match.id]
+    run_sql(sql,values)
+
+
+def delete(id):
+    sql = "DELETE FROM matches WHERE id = %s"
+    values = [id]
+    run_sql(sql,values)

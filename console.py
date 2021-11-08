@@ -11,6 +11,5 @@ team_2 = Team('Watford',2,11,7,2,2,23)
 team_repository.save(team_1)
 team_repository.save(team_2)
 
-match1 = Match(team_1,team_2,'Win')
+match1 = Match(team_1,team_2,'Home Win')
 match_repository.save(match1)
-
