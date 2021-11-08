@@ -2,6 +2,11 @@
 
 {% block content %}
 
-Add Table Here
+{% for team in all_teams %}
+
+<p>{{team.name}}: P:{{team.position}}, W: {{team.wins}}, D: {{team.draws}}, L: {{team.loses}}, Pts: {{team.points}}</p>
+
+{% endfor %}
+
 
 {% endblock %}

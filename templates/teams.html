@@ -6,10 +6,12 @@
     <button type="submit">Add Team</button>
 </form>
 
+<br>
+
 {% for team in all_teams %}
 
 <div class="team">
-    <p>{{team.name}}</p>
+    <a href="/team/{{team.name}}">{{team.name}}</a>
 </div>
 
 {% endfor %}
