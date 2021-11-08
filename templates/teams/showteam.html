@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div>
+    <p>
+        <b>{{team.name}}</b>
+    </p>
+    <p>
+        Position: {{team.position}}
+    </p>
+    <hr>
+    <p>
+        Wins: {{team.wins}} 
+    </p>
+    <p>
+        Draws: {{team.draws}}
+    </p>
+    <p>
+        Loses: {{team.loses}} 
+    </p>
+    <p>
+        Points: {{team.points}}
+    </p>
+
+    <p>
+        <a href="/teams/{{team.id}}/edit">Edit</a>
+    </p>
+</div>
+
+{% endblock %}

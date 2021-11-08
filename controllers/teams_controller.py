@@ -28,3 +28,28 @@ def createteam():
     newteam = Team(name, position,gamesplayed,wins,draws,loses,points)
     team_repository.save(newteam)
     return redirect('/teams')
+
+@teams_blueprint.route('/team/<id>', methods=['GET'])
+def show_team(id):
+    team = team_repository.select(id)
+    return render_template('teams/showteam.html', team = team)
+
+@teams_blueprint.route('/teams/<id>/edit', methods=['GET'])
+def edit_team(id):
+    team = team_repository.select(id)
+    return render_template('/teams/editteam.html', team=team)
+
+@teams_blueprint.route('/teams/<id>', methods=['POST'])
+def update_team(id):
+    name = request.form['teamname']
+    position = request.form['position']
+    gamesplayed = request.form['gamesplayed']
+    wins = request.form['wins']
+    draws = request.form['draws']
+    loses = request.form['loses']
+    points = request.form['points']
+
+    team = Team(name, position,gamesplayed,wins,draws,loses,points,id)
+    team_repository.update(team)
+    return redirect('/teams')
+    
