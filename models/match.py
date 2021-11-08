@@ -1,6 +1,8 @@
-class Game:
+class Match:
 
-    def __init__(self, result = None, id = None):
+    def __init__(self, team_1, team_2, result = None, id = None):
+        self.team_1 = team_1
+        self.team_2 = team_2
         self.result = result
         self.id = id
 

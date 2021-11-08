@@ -23,14 +23,15 @@
         Points: {{team.points}}
     </p>
 
-    <p>
-        <a href="/teams/{{team.id}}/edit">Edit</a>
-    </p>
+    <form action="/teams/{{team.id}}/edit" method="GET">
+        <div>
+          <button type="edit">Edit</button>
+        </div>
 </div>
 </form>
 <form action="/teams/{{team.id}}/delete" method="POST">
   <div>
     <button type="delete">Delete</button>
-  </div>
+</div>
 
 {% endblock %}

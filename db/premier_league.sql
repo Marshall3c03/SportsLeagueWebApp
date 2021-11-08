@@ -1,3 +1,4 @@
+DROP TABLE IF EXISTS matches;
 DROP TABLE IF EXISTS teams;
 
 CREATE TABLE teams (
@@ -9,6 +10,13 @@ CREATE TABLE teams (
     draws INT,
     loses INT,
     points INT
+);
+
+CREATE TABLE matches (
+    id SERIAL PRIMARY KEY,
+    team_1 VARCHAR(255),
+    team_2 VARCHAR(255),
+    result VARCHAR(255)
 );
 
 INSERT INTO teams (name,position,gamesplayed,wins,draws,loses,points) 
