@@ -4,7 +4,7 @@ from flask import Blueprint
 from models.team import Team
 from repositories import team_repository
 
-teams_blueprint = Blueprint("tasks", __name__)
+teams_blueprint = Blueprint("teams", __name__)
 
 @teams_blueprint.route("/teams")
 def teams():
