@@ -8,10 +8,10 @@
 
 <br>
 
-{% for team in all_teams %}
+{% for match in all_matches %}
 
 <div class="match">
-    <a href="/match/{{match.id}}">{{match.home_team}}</a>
+    <a href="/match/{{match.id}}">{{match.home_team.name}}</a>
 </div>
 
 {% endfor %}

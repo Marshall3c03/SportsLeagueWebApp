@@ -27,10 +27,12 @@ def select(id):
     sql = "SELECT * FROM matches WHERE id = %s"
     values = [id]
     result = run_sql(sql,values)
-    pdb.set_trace()
-
-    if result is not None and result[0] is not None:
+    
+    if result is not None and len(result) > 0:
         home_team = team_repository.select(result[0]['home_team_id'])
         away_team = team_repository.select(result[0]['away_team_id'])
         match = Match(home_team ,away_team ,result[0]['result'],result[0]['id'])
-    return match
+    
+        return match
+    else:
+        return Match('None','None','None')

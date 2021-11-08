@@ -14,6 +14,7 @@ team_repository.save(team_2)
 match1 = Match(team_1,team_2,'Win')
 match_repository.save(match1)
 
-selectedmatch = match_repository.select(1)
-hometeam = team_repository.select(selectedmatch.home)
+pdb.set_trace()
+selectedmatch = match_repository.select_all()[0]
+hometeam = team_repository.select(selectedmatch.home.id)
 
