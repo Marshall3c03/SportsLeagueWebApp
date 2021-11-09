@@ -19,7 +19,6 @@ def newmatch():
 
 @matches_blueprint.route('/matches', methods=['POST'])
 def creatematch():
-    # pdb.set_trace()
     home_team_id = request.form['home_team_id']
     home_team = team_repository.select(home_team_id)
     away_team_id = request.form['away_team_id']
@@ -49,7 +48,6 @@ def update_match(id):
     away_team_id = request.form['away_team_id']
     away_team = team_repository.select(away_team_id)
     result = request.form['result']
-
     match = Match(home_team, away_team, result,id)
     match_repository.update(match)
     return redirect('/matches')
