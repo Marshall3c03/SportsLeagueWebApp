@@ -8,7 +8,7 @@
         <label for="home_team">Home Team:</label>
         <select id="home_team" name="home_team_id">
           {% for team in all_teams %}
-            <option value="{{team.id}}">
+            <option value="{{team.id}}" {% if match.home_team.id== team.id %} selected="selected"{% endif %}>
               {{ team.name }}
             </option>
           {% endfor %}
@@ -19,7 +19,7 @@
         <label for="away_team">Away Team:</label>
         <select id="away_team" name="away_team_id">
           {% for team in all_teams %}
-            <option value="{{team.id}}">
+            <option value="{{team.id}}"{% if match.away_team.id== team.id %} selected="selected"{% endif %}>
               {{ team.name }}
             </option>
           {% endfor %}
@@ -29,9 +29,9 @@
     <div>
         <label for="result">Result:</label>
         <select id="result" name="result">
-            <option value="Home Win">Home Win</option>
-            <option value="Away Win">Away Win</option>
-            <option value="Draw">Draw</option>
+            <option value="Home Win"{% if match.result == "Home Win" %} selected="selected"{% endif %}>Home Win</option>
+            <option value="Away Win"{% if match.result == "Away Win" %} selected="selected"{% endif %}>Away Win</option>
+            <option value="Draw"{% if match.result == "Draw" %} selected="selected"{% endif %}>Draw</option>
         </select>
     </div>
 
