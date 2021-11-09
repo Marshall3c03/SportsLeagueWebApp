@@ -1,4 +1,4 @@
-import re
+import pdb
 from flask import Flask, render_template, request, redirect
 from flask import Blueprint
 from controllers.matches_controller import matches
@@ -36,13 +36,14 @@ def edit_team(id):
 
 @teams_blueprint.route('/teams/<id>', methods=['POST'])
 def update_team(id):
+    team = team_repository.select(id)
+    position = team.position
+    gamesplayed = Team.get_matches_played(team)
+    wins = team.wins
+    draws = team.draws
+    loses = team.loses
+    points = team.points
     name = request.form['teamname'].capitalize()
-    position = request.form['position']
-    gamesplayed = request.form['gamesplayed']
-    wins = request.form['wins']
-    draws = request.form['draws']
-    loses = request.form['loses']
-    points = request.form['points']
 
     team = Team(name, position,gamesplayed,wins,draws,loses,points,id)
     team_repository.update(team)
