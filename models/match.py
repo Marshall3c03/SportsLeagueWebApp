@@ -1,8 +1,10 @@
 class Match:
 
-    def __init__(self, home_team, away_team, result = None, id = None):
+    def __init__(self, home_team, away_team, home_score, away_score, result = None, id = None):
         self.home_team = home_team
         self.away_team = away_team
+        self.home_score = home_score
+        self.away_score = away_score
         self.result = result
         self.id = id
 

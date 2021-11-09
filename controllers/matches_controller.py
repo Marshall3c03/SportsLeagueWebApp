@@ -23,9 +23,11 @@ def creatematch():
     home_team = team_repository.select(home_team_id)
     away_team_id = request.form['away_team_id']
     away_team = team_repository.select(away_team_id)
+    home_score = request.form['home_score']
+    away_score = request.form['away_score']
     result = request.form['result']
 
-    newmatch = Match(home_team, away_team, result)
+    newmatch = Match(home_team, away_team, home_score, away_score, result)
     match_repository.save(newmatch)
     return redirect('/matches')
 
@@ -43,12 +45,16 @@ def edit_match(id):
 
 @matches_blueprint.route('/match/<id>', methods=['POST'])
 def update_match(id):
+    pdb.set_trace()
     home_team_id = request.form['home_team_id']
     home_team = team_repository.select(home_team_id)
     away_team_id = request.form['away_team_id']
     away_team = team_repository.select(away_team_id)
+    home_score = request.form['home_score']
+    away_score = request.form['away_score']
     result = request.form['result']
-    match = Match(home_team, away_team, result,id)
+
+    match = Match(home_team, away_team, home_score, away_score, result,id)
     match_repository.update(match)
     return redirect('/matches')
 
