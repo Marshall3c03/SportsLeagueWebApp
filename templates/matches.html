@@ -11,7 +11,7 @@
 {% for match in all_matches %}
 
 <div class="match">
-    <a href="/match/{{match.id}}">Match {{match.id}}</a>
+    <a href="/match/{{match.id}}">Match {{match.id}}: {{match.home_team.name}} vs {{match.away_team.name}}</a>
 </div>
 
 {% endfor %}

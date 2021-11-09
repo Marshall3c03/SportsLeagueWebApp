@@ -2,13 +2,43 @@
 
 {% block content %}
 
-<div>
-    <p>
+<div class="team_title">
+    <h2>
         <b>{{team.name}}</b>
-    </p>
-    <p>
-        Position: {{team.position}}
-    </p>
+    </h2>
+</div>
+
+<form action="/teams/{{team.id}}/edit" method="GET">
+    <div>
+      <button type="edit">Edit</button>
+    </div>
+</form>
+
+<form action="/teams/{{team.id}}/delete" method="POST">
+    <div>
+        <button type="delete">Delete</button>
+    </div>
+</form>
+
+<div class="team_position">
+    {% if team.position == 1 %}
+        <p>
+            Position: {{team.position}}st
+        </p>
+        {% elif team.position == 2 %}
+            <p>
+                Position: {{team.position}}nd
+            </p>
+        {% elif team.position == 3 %}
+        <p>
+            Position: {{team.position}}rd
+        </p>
+        {% else %}
+        <p>
+            Position: {{team.position}}th
+        </p>
+    {% endif %}
+<div>
     <hr>
     <p>
         Wins: {{team.wins}} 
@@ -22,16 +52,35 @@
     <p>
         Points: {{team.points}}
     </p>
-
-    <form action="/teams/{{team.id}}/edit" method="GET">
-        <div>
-          <button type="edit">Edit</button>
-        </div>
 </div>
-</form>
-<form action="/teams/{{team.id}}/delete" method="POST">
-  <div>
-    <button type="delete">Delete</button>
+
+<hr>
+
+<h3>Matches</h3>
+
+<div class="all_team_matches">
+    {% for match in all_matches %}
+        {% if match.home_team.name == team.name %}
+        <div class="team_match">
+            <p>
+                <b>
+                    <a href="/match/{{match.id}}">Match {{match.id}} - {{match.result}}</a>
+                </b>
+            </p>
+            <p>{{match.home_team.name}} vs {{match.away_team.name}}</p>
+        </div>
+        {% elif match.away_team.name == team.name %}
+        <div class="team_match">
+            <p>
+                <b>
+                    <a href="/match/{{match.id}}">Match {{match.id}} - {{match.result}}</a>
+                </b>
+            </p>
+            <p>{{match.home_team.name}} vs {{match.away_team.name}}</p>
+        </div>
+        {% endif %}
+    {% endfor %}
+   
 </div>
 
 {% endblock %}

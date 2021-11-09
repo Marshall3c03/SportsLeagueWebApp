@@ -56,4 +56,3 @@ def update_match(id):
 def delete_match(id):
     match_repository.delete(id)
     return redirect('/matches')
-    
