@@ -1,0 +1,28 @@
+.match_teams {
+    background-color: rgb(33,33,33);
+    height: 50px;
+    padding: 10px;
+}
+.backarrow {
+
+}
+.match_teams img {
+    padding: 10px;
+    float: left;
+}
+
+.match_teams p {
+    margin: 12.5px;
+    color: white;
+    font-size: 20px;
+}
+
+.match_teams p  a {
+    color: white;
+    text-decoration: none;
+    display: inline;
+}
+
+.match_teams img {
+    display: inline;
+}

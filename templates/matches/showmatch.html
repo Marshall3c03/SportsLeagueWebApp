@@ -2,11 +2,14 @@
 
 {% block content %}
 
-<div>
+<div class="match_teams">
+    <form action="/teams" method="GET">
+      <button id="backarrow" class="back_arrow" ><img src="/static/images/Backarrow.png" width="25px"/></button>
+    </form>
     <p>
-        {{match.home_team.name}} Vs {{match.away_team.name}} 
+      <a href="">{{match.home_team.name}}</a> Vs {{match.away_team.name}} 
     </p>
-    <hr>
+</div>
     <p>{{match.result}}</p>
     <p>{{match.home_score}} - {{match.away_score}}</p> 
 

@@ -1,0 +1,28 @@
+body {
+    background-color: rgb(233,236,239);
+}
+
+.all_teams {
+    margin: 10px;
+    display: flex;
+    flex-flow: row wrap;
+    flex-direction: column;
+    max-height: 75px;
+    max-width: 100px;
+}
+
+.add_team_button {
+    margin: 10px;
+}
+
+.team {
+    background-color: rgb(248, 249, 250);
+    margin: 10px;
+    padding: 10px;
+    flex: 5%;
+    box-shadow: 1px 1px 5px 0.5px;
+}
+
+.club_badge {
+    margin:10px
+}

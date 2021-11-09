@@ -8,6 +8,18 @@ header {
 
 .premierlogo {
     padding: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.premierlogo img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    margin-bottom: 10px;
 }
 
 nav {

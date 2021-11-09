@@ -1,21 +1,24 @@
 {% extends "base.html" %}
 
 {% block content %}
+<div class="all_teams">
+    <div class="add_team_button"></div>
+    <form method="get" action="/newteam">
+        <button type="submit">Add Team</button>
+    </form>
 
-<form method="get" action="/newteam">
-    <button type="submit">Add Team</button>
-</form>
-
-<br>
-
-{% for team in all_teams %}
-
-<div class="team">
-    <a href="/team/{{team.id}}">{{team.name}}</a>
     <br>
-    <img src="/static/images/ClubBadges/{{team.name}}.png" alt="" width="50px">
-</div>
 
-{% endfor %}
+    {% for team in all_teams %}
+
+        <div class="team">
+            <a href="/team/{{team.id}}">{{team.name}}</a>
+            <div class="club_badge">
+                <img src="/static/images/ClubBadges/{{team.name}}.png" alt="" width="50px">
+            </div>
+        </div>
+
+    {% endfor %}
+</div>
 
 {% endblock %}
