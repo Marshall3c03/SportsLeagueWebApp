@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<form action="/matches" method="post">
+<form action="/match/{{match.id}}" method="post">
 
     <div>
         <label for="home_team">Home Team:</label>
@@ -26,10 +26,19 @@
         </select>
     </div>
 
+    <div>
+        <label for="result">Result:</label>
+        <select id="result" name="result">
+            <option value="Home Win">Home Win</option>
+            <option value="Away Win">Away Win</option>
+            <option value="Draw">Draw</option>
+        </select>
+    </div>
+
 
 
     <div>
-        <button type="submit">Update Team</button>
+        <button type="submit">Update Match</button>
     </div>
   
 {% endblock %}

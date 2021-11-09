@@ -37,9 +37,10 @@ def show_match(id):
 
 @matches_blueprint.route('/matches/<id>/edit', methods=['GET'])
 def edit_match(id):
+    match = match_repository.select(id)
     matches = match_repository.select_all()
     teams = team_repository.select_all()
-    return render_template('/matches/editmatch.html', all_matches=matches, all_teams = teams)
+    return render_template('/matches/editmatch.html', all_matches=matches, all_teams = teams, match=match)
 
 @matches_blueprint.route('/match/<id>', methods=['POST'])
 def update_match(id):
@@ -50,7 +51,7 @@ def update_match(id):
     result = request.form['result']
 
     match = Match(home_team, away_team, result,id)
-    match_repository.save(match)
+    match_repository.update(match)
     return redirect('/matches')
 
 @matches_blueprint.route('/match/<id>/delete', methods=['POST'])

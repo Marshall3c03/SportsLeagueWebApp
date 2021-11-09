@@ -39,7 +39,7 @@ def select(id):
 
 def update(match):
     sql = "UPDATE matches SET (home_team_id, away_team_id, result) VALUES (%s,%s,%s) WHERE id = %s"
-    values = [match.home_team_id.id, match.away_team_id.id, match.result, match.id]
+    values = [match.home_team.id, match.away_team.id, match.result, match.id]
     run_sql(sql,values)
 
 
