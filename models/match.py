@@ -8,7 +8,17 @@ class Match:
         self.result = result
         self.id = id
 
-    def get_result(self,result):
+    def get_match_result(home_score,away_score):
+        if home_score == away_score:
+            return "Draw"
+        elif home_score > away_score:
+            return "Home Win"
+        elif home_score < away_score:
+            return "Away Win"
+        else:
+            return None
+
+    def determine_club_awared_points(self,result):
         points = 0
         if result == None:
             return "Enter a valid result (Win, Draw, Loss)"
