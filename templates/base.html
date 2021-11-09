@@ -4,19 +4,39 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" crossorigin="anonymous">
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Arbutus+Slab&family=Open+Sans:wght@300&display=swap" rel="stylesheet">
   <title>Premier League {{ title }}</title>
 </head>
 <body>
   <header>
-    <img src="/static/images/LargeLogo.png" alt="" width="300px">
+    <div class="premierlogo">
+      <img src="/static/images/LargeWhiteLogo.png" alt="" width="300px">
+    </div>
     <nav>
       <ul class="menu">
-        <li><a href="/">Live Table</a></li>
-        <li><a href="/teams">Teams</a></li>
-        <li><a href="/matches">Matches</a></li>
-        <li><a href="/about">About</a></li>
+        <div class="links">
+          <li>
+            <a href="/">TABLE</a>
+          </li>
+        </div>
+        <div class="links">
+          <li>
+            <a href="/teams">TEAMS</a>
+          </li>
+        </div>
+        <div class="links">
+          <li>
+            <a href="/matches">MATCHES</a>
+          </li>
+        </div>
+        <div class="links">
+          <li>
+            <a href="/about">ABOUT</a>
+          </li>
+        </div>
       </ul>
     </nav>
   </header>

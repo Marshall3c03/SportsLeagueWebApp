@@ -1,5 +1,4 @@
 import pdb
-from typing import Match
 from db.run_sql import run_sql
 
 from models.match import Match

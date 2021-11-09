@@ -5,6 +5,14 @@
 <form action="/teams" method="post">
 
     <div>
+      <form action="/teams">
+        <label for="img">Select image:</label>
+        <input type="file" id="img" name="img" accept="image/*">
+        <input type="submit">
+      </form>
+    </div>
+
+    <div>
       <label for="teamname">Team Name:</label>
       <input type="text" id="teamname" name="teamname" placeholder="Team Name" required autofocus>
     </div>

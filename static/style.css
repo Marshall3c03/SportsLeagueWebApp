@@ -1,0 +1,52 @@
+body {
+    margin:0
+}
+
+header {
+    background-color: rgb(67, 23, 96);
+}
+
+.premierlogo {
+    padding: 10px;
+}
+
+nav {
+    margin: 0;
+}
+
+.menu {
+    color: orange;
+    justify-content: center;
+    display: flex;
+    flex-wrap: row;
+    margin: 1px;
+
+}
+
+.links {
+    /* border: 1px solid black; */
+    padding: 10px;
+    flex-basis: 20%;
+    margin-bottom: 5px;
+}
+
+.links hover {
+    background-color: turquoise;
+}
+
+.menu li {
+    margin: 1px;
+    list-style: none;
+    justify-content: center;
+}
+.menu li a {
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    font-family: 'Arbutus Slab', serif;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.menu li a hover {
+    background-color: red;
+}
