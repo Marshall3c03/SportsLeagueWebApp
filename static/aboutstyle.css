@@ -1,0 +1,26 @@
+.about_banner {
+    object-fit: cover;
+}
+
+.image {
+    margin-top: 20px;
+    padding-left: 8%;
+    
+}
+
+.text_content {
+    margin-top: 2%;
+    margin-left: 8%;
+    margin-right: 9%;
+    margin-bottom: 5%;
+}
+
+.text_content h2 {
+    font-size: 18px;
+    color: rgb(67, 23, 96);
+
+}
+
+.text_content p {
+    font-size: smaller
+}

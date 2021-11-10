@@ -6,6 +6,17 @@ header {
     background-color: rgb(67, 23, 96);
 }
 
+footer {
+    background-color: rgb(67, 23, 96);
+    width: 100%;
+    padding: 1%;
+}
+
+footer h5 {
+    color: white;
+    font-size: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
 .premierlogo {
     padding: 10px;
     display: block;

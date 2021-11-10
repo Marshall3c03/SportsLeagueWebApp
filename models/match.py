@@ -18,6 +18,17 @@ class Match:
         else:
             return None
 
+    def detemine_club_position(teams,selected_team):
+        for team in teams:
+            if selected_team.points < team.points:
+                selected_team.position += 1
+            elif selected_team.points > team.points:
+                selected_team.position -+ 1
+
+    def determine_club_positions(teams):
+        for team in teams:
+            Match.detemine_club_position()
+
     def determine_club_awared_points(match):
         if match.home_score > match.away_score:
            match.home_team.points +=3

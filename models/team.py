@@ -38,7 +38,3 @@ class Team:
 
         alphabetical = sorted(alphabetical)
         return alphabetical
-
-    def remove_gameplayed(home_team,away_team):
-        home_team.gamesplayed -= 1
-        away_team.gamesplayed -= 1
