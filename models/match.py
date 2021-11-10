@@ -18,12 +18,17 @@ class Match:
         else:
             return None
 
-    def determine_club_awared_points(self,result):
-        points = 0
-        if result == None:
-            return "Enter a valid result (Win, Draw, Loss)"
-        elif result.lower() == "win":
-            points += 3
-        elif result.lower() == "draw":
-            points += 1
-        return points
+    def determine_club_awared_points(match):
+        if match.home_score > match.away_score:
+           match.home_team.points +=3
+        elif match.home_score < match.away_score:
+            match.away_score.points +=3
+        else:
+            match.home_team.points +=1
+            match.away_team.points +=1
+
+    def update_gamesplayed(match):
+        match.home_team.gamesplayed += 1
+
+    def update_wins(match):
+        pass

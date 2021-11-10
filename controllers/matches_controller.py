@@ -26,8 +26,11 @@ def creatematch():
     home_score = request.form['home_score']
     away_score = request.form['away_score']
     result = Match.get_match_result(home_score, away_score)
-
     newmatch = Match(home_team, away_team, home_score, away_score, result)
+    Match.update_gamesplayed(newmatch)
+    Match.determine_club_awared_points(newmatch)
+    team_repository.update(home_team)
+    team_repository.update(away_team)
     match_repository.save(newmatch)
     return redirect('/matches')
 
