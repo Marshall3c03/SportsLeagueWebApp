@@ -1,3 +1,9 @@
+.new_match {
+    margin: 20px;
+}
+
+
+
 .match_teams {
     background-color: rgb(33,33,33);
     height: 50px;

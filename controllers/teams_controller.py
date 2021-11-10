@@ -9,9 +9,8 @@ teams_blueprint = Blueprint("teams", __name__)
 
 @teams_blueprint.route("/teams")
 def teams():
-    teams = team_repository.select_all()
-    alphabetical_order = Team.get_alphabetical_order(teams)
-    return render_template('teams.html', title="Teams",all_teams=teams,alphabetical=alphabetical_order)
+    teams = team_repository.select_all_by_alphabetical()
+    return render_template('teams.html', title="Teams",all_teams=teams,)
 
 @teams_blueprint.route("/newteam", methods=['GET'])
 def newteam():

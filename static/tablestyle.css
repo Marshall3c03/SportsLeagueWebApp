@@ -8,6 +8,16 @@
     display: block;
     margin-left: 150px;
     margin-right: 150px;
+    border: 1px solid black;
+}
+
+.table tr th{
+    border: 1px solid black;
+}
+
+.table tr td {
+    border: 1px solid black;
+
 }
 
 .tr_club {

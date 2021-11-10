@@ -22,13 +22,28 @@ class Match:
         if match.home_score > match.away_score:
            match.home_team.points +=3
         elif match.home_score < match.away_score:
-            match.away_score.points +=3
+            match.away_team.points +=3
         else:
             match.home_team.points +=1
             match.away_team.points +=1
 
     def update_gamesplayed(match):
         match.home_team.gamesplayed += 1
+        match.away_team.gamesplayed += 1
 
-    def update_wins(match):
+    def update_wins_draws_loses(match):
+        if match.result == "Draw":
+            match.home_team.draws +=1
+            match.away_team.draws +=1
+        elif match.result == "Home Win":
+            match.home_team.wins += 1
+            match.away_team.loses += 1
+        elif match.result == "Away Win":
+            match.away_team.wins += 1
+            match.home_team.loses += 1
+
+    def update_goalsscored_goalsconceded():
+        pass
+
+    def update_goaldifference():
         pass

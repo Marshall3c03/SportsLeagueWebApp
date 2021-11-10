@@ -28,6 +28,7 @@ def creatematch():
     result = Match.get_match_result(home_score, away_score)
     newmatch = Match(home_team, away_team, home_score, away_score, result)
     Match.update_gamesplayed(newmatch)
+    Match.update_wins_draws_loses(newmatch)
     Match.determine_club_awared_points(newmatch)
     team_repository.update(home_team)
     team_repository.update(away_team)

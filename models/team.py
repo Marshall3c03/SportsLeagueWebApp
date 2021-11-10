@@ -28,20 +28,6 @@ class Team:
 
         return gamesplayed
 
-    def get_team_wins(team):
-        pass
-
-    def get_team_draws(team):
-        pass
-    
-    def get_team_loses(team):
-        pass
-
-    def get_team_points(team):
-        points = 0
-        pass
-    
-
     def get_alphabetical_order(teams):
         alphabetical = []
         teams = teams
