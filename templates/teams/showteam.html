@@ -3,22 +3,29 @@
 {% block content %}
 
 <div class="team_title">
-    <h2>
-        <b>{{team.name}}</b>
-    </h2>
+    <div class="title_content">
+        <div>
+            <img class="club_badge" src="/static/images/ClubBadges/{{team.name}}.png" alt="" width="50px">
+        </div> 
+        <h2>
+            <b>{{team.name}}</b>
+        </h2>
+    </div>
 </div>
 
-<form action="/teams/{{team.id}}/edit" method="GET">
-    <div>
-      <button type="edit">Edit</button>
-    </div>
-</form>
+<div class="team_buttons">
+    <form action="/teams/{{team.id}}/edit" method="GET">
+        <div>
+        <button type="edit">Edit</button>
+        </div>
+    </form>
 
-<form action="/teams/{{team.id}}/delete" method="POST">
-    <div>
-        <button type="delete">Delete</button>
-    </div>
-</form>
+    <form action="/teams/{{team.id}}/delete" method="POST">
+        <div>
+            <button type="delete">Delete</button>
+        </div>
+    </form>
+</div>
 
 <div class="team_position">
     {% if team.position == 1 %}
@@ -38,21 +45,22 @@
             Position: {{team.position}}th
         </p>
     {% endif %}
-<div>
-    <hr>
-    <p>
-        Wins: {{team.wins}} 
-    </p>
-    <p>
-        Draws: {{team.draws}}
-    </p>
-    <p>
-        Loses: {{team.loses}} 
-    </p>
-    <p>
-        Points: {{team.points}}
-    </p>
-</div>
+
+    <div>
+        <hr>
+        <p>
+            Wins: {{team.wins}} 
+        </p>
+        <p>
+            Draws: {{team.draws}}
+        </p>
+        <p>
+            Loses: {{team.loses}} 
+        </p>
+        <p>
+            Points: {{team.points}}
+        </p>
+    </div>
 
 <hr>
 

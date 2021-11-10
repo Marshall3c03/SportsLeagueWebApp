@@ -19,6 +19,7 @@ def newmatch():
 
 @matches_blueprint.route('/matches', methods=['POST'])
 def creatematch():
+    teams = team_repository.select_all()
     home_team_id = request.form['home_team_id']
     home_team = team_repository.select(home_team_id)
     away_team_id = request.form['away_team_id']
@@ -30,6 +31,10 @@ def creatematch():
     Match.update_gamesplayed(newmatch)
     Match.update_wins_draws_loses(newmatch)
     Match.determine_club_awared_points(newmatch)
+    team_repository.update(home_team)
+    team_repository.update(away_team)
+    Match.detemine_club_position(teams, home_team)
+    Match.detemine_club_position(teams, away_team)
     team_repository.update(home_team)
     team_repository.update(away_team)
     match_repository.save(newmatch)

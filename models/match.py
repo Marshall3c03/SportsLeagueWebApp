@@ -27,7 +27,7 @@ class Match:
 
     def determine_club_positions(teams):
         for team in teams:
-            Match.detemine_club_position()
+            Match.detemine_club_position(teams, team)
 
     def determine_club_awared_points(match):
         if match.home_score > match.away_score:

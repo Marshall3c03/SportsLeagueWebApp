@@ -13,8 +13,15 @@ app.register_blueprint(matches_blueprint)
 @app.route('/')
 def homepage():
     teams = team_repository.select_all_by_points()
-    return render_template('table.html', title= "Table",all_teams=teams)
-
+    for team in teams:
+        if team.points > 0:
+            # return "YAY"
+            return render_template('table.html', title= "Table", all_teams=teams)
+    else:
+    #     # return "NILL PWAHH"
+        teams = team_repository.select_all_by_alphabetical
+        return render_template('table.html', title= "Table", all_teams=teams)
+    
 @app.route('/about')
 def aboutpage():
     return render_template('about.html', title= "About")

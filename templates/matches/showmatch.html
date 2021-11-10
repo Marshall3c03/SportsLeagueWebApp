@@ -4,13 +4,14 @@
 
 <div class="match_teams">
     <p>
-      <a href="">{{match.home_team.name}}</a> vs {{match.away_team.name}} 
+      <a href="/team/{{match.home_team.id}}">{{match.home_team.name}}</a> vs <a href="/team/{{match.away_team.id}}">{{match.away_team.name}}</a>
     </p>
 </div>
 
 <div class="scores">
   <div>
-    <img class="match_club_badge" src="/static/images/ClubBadges/{{match.home_team.name}}.png" alt="" width="50px">
+    <a href="/team/{{match.home_team.id}}"><img class="match_club_badge" src="/static/images/ClubBadges/{{match.home_team.name}}.png" alt="" width="50px"></a>
+    <!-- <img class="match_club_badge" src="/static/images/ClubBadges/{{match.home_team.name}}.png" alt="" width="50px"> -->
   </div>
   <div class="home_team_score">
       <h2>{{match.home_score}}</h2>  
@@ -20,7 +21,7 @@
     <h2>{{match.away_score}}</h2>  
   </div>
   <div>
-    <img class="match_club_badge" src="/static/images/ClubBadges/{{match.away_team.name}}.png" alt="" width="50px">
+    <a href="/team/{{match.away_team.id}}"><img class="match_club_badge" src="/static/images/ClubBadges/{{match.away_team.name}}.png" alt="" width="50px"></a>
   </div>
 </div>
 

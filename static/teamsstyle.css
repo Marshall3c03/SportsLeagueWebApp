@@ -45,3 +45,31 @@ body {
     margin:10px
 }
 
+.team_title {
+    background-image: url("/static/images/banner.png");
+    height: 50px;
+    padding: 20px;
+}
+
+.team_title h2 {
+    color: white;
+    padding-left: 15px;
+}
+
+.title_content {
+    display: flex;
+    flex-flow: row wrap;
+    flex-direction: row;
+    margin: -8px;
+}
+
+.team_buttons {
+    display: flex;
+    flex-flow: row wrap;
+    flex-direction: row;
+    margin: 20px;
+}
+
+.team_position {
+    margin: 20px;
+}
