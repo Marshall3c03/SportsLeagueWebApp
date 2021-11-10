@@ -2,31 +2,6 @@
 
 {% block content %}
 
-
-<div class="table_container">
-    <table class="table">
-        <tr>
-          <th></th>
-          <th class="tr_club">Club</th>
-          <th>MP</th>
-          <th>W</th>
-          <th>D</th>
-          <th>L</th>
-          <th>Pts</th>
-        </tr>
-        {% for team in all_teams %}
-        <tr>
-          <td>{{team.position}}</td>
-          <td>{{team.name}}</td>
-          <td>{{team.gamesplayed}}</td>
-          <td>{{team.wins}}</td>
-          <td>{{team.draws}}</td>
-          <td>{{team.loses}}</td>
-          <td>{{team.points}}</td>
-        </tr>
-        {% endfor %}
-      </table>
-</div>
 <div class="table_container">
   <table class="styled-table">
     <thead>
