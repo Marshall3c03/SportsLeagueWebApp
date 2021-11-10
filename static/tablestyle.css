@@ -56,3 +56,7 @@
 .styled-table tbody tr.active-row {
     color: black;
 }
+
+.styled-table tbody tr tr td a {
+    text-decoration: none;
+}
