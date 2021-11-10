@@ -2,8 +2,14 @@ body {
     background-color: rgb(233,236,239);
 }
 
-.add_team_button {
+.create_team_button {
     margin: 20px;
+    margin-top: 25px;
+    
+}
+
+.container {
+    margin-bottom: 4%;
 }
 
 .all_teams {
@@ -11,6 +17,7 @@ body {
     display: flex;
     flex-flow: row wrap;
     flex-direction: row;
+    margin-bottom: 20px;
 }
 
 .add_team_button {
@@ -37,3 +44,4 @@ body {
 .club_badge {
     margin:10px
 }
+

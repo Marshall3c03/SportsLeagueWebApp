@@ -55,6 +55,23 @@ nav {
     
 }
 
+.link_table {
+    padding-left: 30%;
+    padding-right: 30%;
+}
+
+.link_teams {
+    padding-left: 30%;
+}
+
+.link_matches {
+    padding-left: 22%
+}
+
+.link_about {
+    padding-left: 26%;
+}
+
 .menu .links:hover {
     background-color: rgb(62, 21, 90);
 
