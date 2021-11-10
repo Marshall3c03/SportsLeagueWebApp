@@ -37,14 +37,16 @@ nav {
 }
 
 .links {
-    /* border: 1px solid black; */
     padding: 10px;
     flex-basis: 20%;
     margin-bottom: 5px;
+    background-color: rgb(67, 23, 96);
+    
 }
 
-.links hover {
-    background-color: turquoise;
+.menu .links:hover {
+    background-color: rgb(62, 21, 90);
+
 }
 
 .menu li {
@@ -61,5 +63,5 @@ nav {
 }
 
 .menu li a hover {
-    background-color: red;
+    color: red;
 }
