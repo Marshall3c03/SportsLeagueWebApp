@@ -31,7 +31,8 @@ nav {
     justify-content: center;
     display: flex;
     flex-wrap: row;
-    margin: 1px;
+    margin-left: 150px;
+    margin-right: 150px;
 
 }
 

@@ -10,7 +10,8 @@ teams_blueprint = Blueprint("teams", __name__)
 @teams_blueprint.route("/teams")
 def teams():
     teams = team_repository.select_all()
-    return render_template('teams.html', title="Teams",all_teams=teams)
+    alphabetical_order = Team.get_alphabetical_order(teams)
+    return render_template('teams.html', title="Teams",all_teams=teams,alphabetical=alphabetical_order)
 
 @teams_blueprint.route("/newteam", methods=['GET'])
 def newteam():
@@ -18,7 +19,7 @@ def newteam():
 
 @teams_blueprint.route('/teams', methods=['POST'])
 def createteam():
-    name = request.form['teamname'].capitalize()
+    name = request.form['teamname'].title()
     newteam = Team(name)
     team_repository.save(newteam)
     return redirect('/teams')
@@ -43,7 +44,7 @@ def update_team(id):
     draws = team.draws
     loses = team.loses
     points = team.points
-    name = request.form['teamname'].capitalize()
+    name = request.form['teamname'].title()
 
     team = Team(name, position,gamesplayed,wins,draws,loses,points,id)
     team_repository.update(team)

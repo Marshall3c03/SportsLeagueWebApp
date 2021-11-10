@@ -1,0 +1,15 @@
+.table_container {
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-top: 50px;
+}
+
+.table {
+    display: block;
+    margin-left: 150px;
+    margin-right: 150px;
+}
+
+.tr_club {
+    margin-right: 50px;
+}

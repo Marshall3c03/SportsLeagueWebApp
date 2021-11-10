@@ -2,17 +2,19 @@ body {
     background-color: rgb(233,236,239);
 }
 
+.add_team_button {
+    margin: 20px;
+}
+
 .all_teams {
     margin: 10px;
     display: flex;
     flex-flow: row wrap;
-    flex-direction: column;
-    max-height: 75px;
-    max-width: 100px;
+    flex-direction: row;
 }
 
 .add_team_button {
-    margin: 10px;
+    margin-left: 20px;
 }
 
 .team {
@@ -21,6 +23,15 @@ body {
     padding: 10px;
     flex: 5%;
     box-shadow: 1px 1px 5px 0.5px;
+    max-height: 150px;
+    max-width: 100px;
+}
+
+.team_content {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin: 10px;
 }
 
 .club_badge {
