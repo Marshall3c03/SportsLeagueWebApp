@@ -23,7 +23,7 @@
         <tr>
           {% for team in all_teams %}
           <tr>
-            <td>{{team.position}}</td>
+            <td>{{ loop.index }}</td>
             <td>{{team.name}}</td>
             <td>{{team.gamesplayed}}</td>
             <td>{{team.wins}}</td>
