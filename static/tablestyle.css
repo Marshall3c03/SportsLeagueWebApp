@@ -8,14 +8,15 @@
     display: block;
     margin-left: 150px;
     margin-right: 150px;
-    border: 1px solid black;
 }
 
 .table tr th{
+    padding: 10px;
     border: 1px solid black;
 }
 
 .table tr td {
+    padding: 10px;
     border: 1px solid black;
 
 }

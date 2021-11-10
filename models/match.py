@@ -42,6 +42,30 @@ class Match:
             match.away_team.wins += 1
             match.home_team.loses += 1
 
+    def remove_gameplayed(home_team,away_team):
+        home_team.gamesplayed -= 1
+        away_team.gamesplayed -= 1
+
+    def remove_wins_draws_loses(match, home_team, away_team):
+        if match.result == "Draw":
+            home_team.draws -=1
+            away_team.draws -=1
+        elif match.result == "Home Win":
+            home_team.wins -= 1
+            away_team.loses -= 1
+        elif match.result == "Away Win":
+            away_team.wins -= 1
+            home_team.loses -= 1
+
+    def remove_points(match, home_team, away_team):
+        if match.result == "Draw":
+            home_team.points -=1
+            away_team.points -=1
+        elif match.result == "Home Win":
+            home_team.points -= 3
+        elif match.result == "Away Win":
+            away_team.points -= 3
+
     def update_goalsscored_goalsconceded():
         pass
 

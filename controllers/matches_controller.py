@@ -2,7 +2,7 @@ import pdb
 from flask import Flask, render_template, request, redirect
 from flask import Blueprint
 from models.match import Match
-from repositories import match_repository
+from repositories import match_repository, team_repository
 from repositories import team_repository
 
 matches_blueprint = Blueprint("matches", __name__)
@@ -63,5 +63,14 @@ def update_match(id):
 
 @matches_blueprint.route('/match/<id>/delete', methods=['POST'])
 def delete_match(id):
+    match = match_repository.select(id)
+    pdb.set_trace()
+    home_team = match.home_team
+    away_team = match.away_team
+    Match.remove_gameplayed(home_team, away_team)
+    Match.remove_wins_draws_loses(match, home_team, away_team)
+    Match.remove_points(match, home_team, away_team)
+    team_repository.update(home_team)
+    team_repository.update(away_team)
     match_repository.delete(id)
     return redirect('/matches')
