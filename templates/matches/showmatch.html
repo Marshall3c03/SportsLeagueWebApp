@@ -7,18 +7,21 @@
       <a href="">{{match.home_team.name}}</a> Vs {{match.away_team.name}} 
     </p>
 </div>
+<div class="match_result">
     <p>{{match.result}}</p>
-    <p>{{match.home_score}} - {{match.away_score}}</p> 
+    <p>{{match.home_team.name}}  {{match.home_score}} - {{match.away_score}}  {{match.away_team.name}}</p> 
 
     <form action="/matches/{{match.id}}/edit" method="GET">
         <div>
           <button type="edit">Edit</button>
         </div>
+    </form>
+
+    <form action="/match/{{match.id}}/delete" method="POST">
+      <div>
+        <button type="delete">Delete Match</button>
+    </div>
 </div>
-</form>
-<form action="/match/{{match.id}}/delete" method="POST">
-  <div>
-    <button type="delete">Delete Match</button>
-</div>
+
 
 {% endblock %}

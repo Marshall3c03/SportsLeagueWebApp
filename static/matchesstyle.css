@@ -2,8 +2,6 @@
     margin: 20px;
 }
 
-
-
 .match_teams {
     background-color: rgb(33,33,33);
     height: 50px;
@@ -29,4 +27,16 @@
 
 .match_teams img {
     display: inline;
+}
+
+.match {
+    margin: 20px;
+}
+
+.match h3 {
+    text-decoration: underline;
+}
+
+.match_result {
+    margin: 20px;
 }

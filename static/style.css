@@ -93,3 +93,11 @@ nav {
 .menu li a hover {
     color: red;
 }
+
+.lion_head {
+    padding: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
