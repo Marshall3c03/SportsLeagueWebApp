@@ -26,6 +26,17 @@ def select_all_by_alphabetical():
         teams.append(team)
     return teams
 
+def select_all_by_points():
+    teams = []
+
+    sql = "SELECT * FROM teams ORDER BY points DESC"
+    results = run_sql(sql)
+
+    for row in results:
+        team = Team(row['name'],row['position'],row['gamesplayed'],row['wins'],row['draws'],row['loses'],row['points'],row['id'])
+        teams.append(team)
+    return teams
+
 def select(id):
     team = None
     sql = "SELECT * FROM teams WHERE id = %s"

@@ -12,7 +12,7 @@ app.register_blueprint(matches_blueprint)
 
 @app.route('/')
 def homepage():
-    teams = team_repository.select_all()
+    teams = team_repository.select_all_by_points()
     return render_template('table.html', title= "Table",all_teams=teams)
 
 @app.route('/about')
