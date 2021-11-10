@@ -25,6 +25,19 @@ def select_all():
         matches.append(match)
     return matches
 
+def select_all_in_match_order():
+    matches = []
+
+    sql = "SELECT * FROM matches ORDER BY id"
+    results = run_sql(sql)
+
+    for row in results:
+        home_team = team_repository.select(row['home_team_id'])
+        away_team = team_repository.select(row['away_team_id'])
+        match = Match(home_team, away_team, row['home_score'],row['away_score'], row['result'], row['id'] )
+        matches.append(match)
+    return matches
+
 def select(id):
     sql = "SELECT * FROM matches WHERE id = %s"
     values = [id]

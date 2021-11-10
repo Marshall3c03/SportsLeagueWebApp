@@ -4,12 +4,28 @@
 
 <div class="match_teams">
     <p>
-      <a href="">{{match.home_team.name}}</a> Vs {{match.away_team.name}} 
+      <a href="">{{match.home_team.name}}</a> vs {{match.away_team.name}} 
     </p>
 </div>
+
+<div class="scores">
+  <div>
+    <img class="match_club_badge" src="/static/images/ClubBadges/{{match.home_team.name}}.png" alt="" width="50px">
+  </div>
+  <div class="home_team_score">
+      <h2>{{match.home_score}}</h2>  
+  </div>
+  <h1>-</h1>
+  <div class="away_team_score">
+    <h2>{{match.away_score}}</h2>  
+  </div>
+  <div>
+    <img class="match_club_badge" src="/static/images/ClubBadges/{{match.away_team.name}}.png" alt="" width="50px">
+  </div>
+</div>
+
 <div class="match_result">
     <p>{{match.result}}</p>
-    <p>{{match.home_team.name}}  {{match.home_score}} - {{match.away_score}}  {{match.away_team.name}}</p> 
 
     <form action="/matches/{{match.id}}/edit" method="GET">
         <div>

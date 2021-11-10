@@ -9,12 +9,12 @@ matches_blueprint = Blueprint("matches", __name__)
 
 @matches_blueprint.route("/matches")
 def matches():
-    matches = match_repository.select_all()
+    matches = match_repository.select_all_in_match_order()
     return render_template('matches.html', title="Matches",all_matches=matches)
 
 @matches_blueprint.route("/newmatch", methods=['GET'])
 def newmatch():
-    teams = team_repository.select_all()
+    teams = team_repository.select_all_by_alphabetical()
     return render_template('/matches/newmatch.html', title="New Match", all_teams=teams)
 
 @matches_blueprint.route('/matches', methods=['POST'])
@@ -44,7 +44,7 @@ def show_match(id):
 def edit_match(id):
     match = match_repository.select(id)
     matches = match_repository.select_all()
-    teams = team_repository.select_all()
+    teams = team_repository.select_all_by_alphabetical()
     return render_template('/matches/editmatch.html', all_matches=matches, all_teams = teams, match=match)
 
 @matches_blueprint.route('/match/<id>', methods=['POST'])

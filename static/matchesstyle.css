@@ -3,7 +3,8 @@
 }
 
 .match_teams {
-    background-color: rgb(33,33,33);
+    /* background-color: rgb(33,33,33); */
+    background-image: url("/static/images/banner.png");
     height: 50px;
     padding: 10px;
 }
@@ -39,4 +40,50 @@
 
 .match_result {
     margin: 20px;
+}
+
+.scores {
+    margin: 20px;
+    display: flex;
+    flex-wrap: row;
+}
+
+.home_team_score {
+    margin: 20px;
+    background-color: rgb(67, 23, 96);
+    width: 50px;
+    height: 50px;
+    box-shadow: 1px 1px 5px 0.5px;
+    padding-bottom: 15px;
+
+}
+
+.home_team_score h2 {
+    color: white;
+    padding-left: 19px;
+    padding-bottom: 13px;
+    display: block;
+    width: 50%;
+}
+
+.away_team_score {
+    margin: 20px;
+    background-color: rgb(67, 23, 96);
+    width: 50px;
+    height: 50px;
+    box-shadow: 1px 1px 5px 0.5px;
+    padding-bottom: 15px;
+
+}
+
+.away_team_score h2 {
+    color: white;
+    padding-left: 19px;
+    padding-bottom: 13px;
+    display: block;
+    width: 50%;
+}
+
+.match_club_badge {
+    padding-top: 30px;
 }
