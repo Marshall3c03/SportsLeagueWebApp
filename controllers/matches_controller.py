@@ -49,6 +49,18 @@ def edit_match(id):
 
 @matches_blueprint.route('/match/<id>', methods=['POST'])
 def update_match(id):
+    # selected match
+    selected_match = match_repository.select(id)
+    home_team = selected_match.home_team
+    away_team = selected_match.away_team
+    Match.remove_gameplayed(home_team, away_team)
+    Match.remove_wins_draws_loses(selected_match, home_team, away_team)
+    Match.remove_points(selected_match, home_team, away_team)
+    team_repository.update(home_team)
+    team_repository.update(away_team)
+
+
+    # adding new info
     home_team_id = request.form['home_team_id']
     home_team = team_repository.select(home_team_id)
     away_team_id = request.form['away_team_id']
@@ -56,15 +68,19 @@ def update_match(id):
     home_score = request.form['home_score']
     away_score = request.form['away_score']
     result = Match.get_match_result(home_score, away_score)
-
     match = Match(home_team, away_team, home_score, away_score, result,id)
+       
+    Match.update_gamesplayed(match)
+    Match.update_wins_draws_loses(match)
+    Match.determine_club_awared_points(match)
+    team_repository.update(home_team)
+    team_repository.update(away_team)
     match_repository.update(match)
     return redirect('/matches')
 
 @matches_blueprint.route('/match/<id>/delete', methods=['POST'])
 def delete_match(id):
     match = match_repository.select(id)
-    pdb.set_trace()
     home_team = match.home_team
     away_team = match.away_team
     Match.remove_gameplayed(home_team, away_team)
