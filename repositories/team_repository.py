@@ -29,7 +29,7 @@ def select_all_by_alphabetical():
 def select_all_by_points():
     teams = []
 
-    sql = "SELECT * FROM teams ORDER BY points DESC"
+    sql = "SELECT * FROM teams ORDER BY points DESC, name"
     results = run_sql(sql)
 
     for row in results:
