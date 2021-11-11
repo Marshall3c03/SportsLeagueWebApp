@@ -37,8 +37,9 @@ def edit_team(id):
 @teams_blueprint.route('/teams/<id>', methods=['POST'])
 def update_team(id):
     team = team_repository.select(id)
+    matches = match_repository.select_all()
     position = team.position
-    gamesplayed = Team.get_matches_played(team)
+    gamesplayed = Team.get_matches_played(team, matches)
     wins = team.wins
     draws = team.draws
     loses = team.loses

@@ -27,6 +27,16 @@
     </form>
 </div>
 
+
+{% if team.name == "Chelsea" %}
+
+<div class="honours">
+    <p><b>Current Champions League Holders</b></p>
+    <p><b>Current Super Cup Holders</b></p>
+</div>
+
+<hr>
+
 <div class="team_position">
     {% if team.position == 1 %}
         <p>
@@ -49,6 +59,9 @@
     <div>
         <hr>
         <p>
+            Games Played: {{team.gamesplayed}}
+        </p>
+        <p>
             Wins: {{team.wins}} 
         </p>
         <p>
@@ -64,7 +77,11 @@
 
 <hr>
 
-<h3>Matches</h3>
+</div>
+
+<div class="matches">
+    <img src="/static/images/matches.png" alt="">
+</div>
 
 <div class="all_team_matches">
     {% for match in all_matches %}
@@ -82,14 +99,87 @@
         <div class="team_match">
             <p>
                 <b>
-                    <a href="/match/{{match.id}}">Match {{match.id}} - {{match.result}}</a>
+                    <a href="/match/{{match.id}}">Match {{match.id}} - {{match.home_team.name}} vs {{match.away_team.name}} - {{match.result}}</a>
                 </b>
             </p>
-            <p>{{match.home_team.name}} vs {{match.away_team.name}}</p>
+            <p></p>
             <p>{{match.home_score}} - {{match.away_score}}</p>
         </div>
         {% endif %}
     {% endfor %}
+
+{% else %}   
+    <div class="team_position">
+        {% if team.position == 1 %}
+            <p>
+                Position: {{team.position}}st
+            </p>
+            {% elif team.position == 2 %}
+                <p>
+                    Position: {{team.position}}nd
+                </p>
+            {% elif team.position == 3 %}
+            <p>
+                Position: {{team.position}}rd
+            </p>
+            {% else %}
+            <p>
+                Position: {{team.position}}th
+            </p>
+        {% endif %}
+
+        <div>
+            <hr>
+            <p>
+                Games Played: {{team.gamesplayed}}
+            </p>
+            <p>
+                Wins: {{team.wins}} 
+            </p>
+            <p>
+                Draws: {{team.draws}}
+            </p>
+            <p>
+                Loses: {{team.loses}} 
+            </p>
+            <p>
+                Points: {{team.points}}
+            </p>
+        </div>
+
+    <hr>
+
+    </div>
+
+    <div class="matches">
+        <img src="/static/images/matches.png" alt="">
+    </div>
+
+    <div class="all_team_matches">
+        {% for match in all_matches %}
+            {% if match.home_team.name == team.name %}
+            <div class="team_match">
+                <p>
+                    <b>
+                        <a href="/match/{{match.id}}">Match {{match.id}} - {{match.result}}</a>
+                    </b>
+                </p>
+                <p>{{match.home_team.name}} vs {{match.away_team.name}}</p>
+                <p>{{match.home_score}} - {{match.away_score}}</p>
+            </div>
+            {% elif match.away_team.name == team.name %}
+            <div class="team_match">
+                <p>
+                    <b>
+                        <a href="/match/{{match.id}}">Match {{match.id}} - {{match.home_team.name}} vs {{match.away_team.name}} - {{match.result}}</a>
+                    </b>
+                </p>
+                <p></p>
+                <p>{{match.home_score}} - {{match.away_score}}</p>
+            </div>
+            {% endif %}
+        {% endfor %}
+{% endif %}
    
 </div>
 

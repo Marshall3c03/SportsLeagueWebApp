@@ -34,6 +34,15 @@ body {
     max-width: 100px;
 }
 
+.team_name {
+    margin: 20px;
+}
+
+.team_badge {
+    margin: 20px;
+}
+
+
 .team_content {
     display: block;
     margin-left: auto;
@@ -72,4 +81,21 @@ body {
 
 .team_position {
     margin: 20px;
+}
+
+.matches img{
+    width: 100%;
+}
+
+.all_team_matches {
+    margin: 20px;
+}
+
+.honours {
+    margin: 20px;
+}
+
+
+.honours > p {
+    font-style: bold;
 }

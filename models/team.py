@@ -13,12 +13,9 @@ class Team:
         self.points = points
         self.id = id
 
-    def get_matches_played(team):
+    def get_matches_played(team, matches):
         team_games = []
-
-        matches = match_repository.select_all()
-        
-
+    
         for match in matches:
             if match.home_team.name == team.name:
                 team_games.append(match)
