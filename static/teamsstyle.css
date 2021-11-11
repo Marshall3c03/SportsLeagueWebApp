@@ -35,11 +35,12 @@ body {
 }
 
 .team_name {
-    margin: 20px;
+    margin-top: 20px;
+    margin-left: 30px;
 }
 
 .team_badge {
-    margin: 20px;
+    margin-left: 30px;
 }
 
 
@@ -76,11 +77,12 @@ body {
     display: flex;
     flex-flow: row wrap;
     flex-direction: row;
-    margin: 20px;
+    margin-top: 20px;
+    margin-left: 30px;
 }
 
 .team_position {
-    margin: 20px;
+    margin: 30px;
 }
 
 .matches img{
@@ -88,14 +90,25 @@ body {
 }
 
 .all_team_matches {
-    margin: 20px;
+    margin: 30px;
 }
 
 .honours {
-    margin: 20px;
+    margin-left: 30px;
 }
 
+.honours h3 {
+    text-decoration: underline;
+}
 
-.honours > p {
-    font-style: bold;
+.honours ul li {
+    font-size:  18px;
+}
+
+.new_team_name {
+    margin-left: 30px;
+    margin-top: 30px;
+}
+.new_team_button {
+    margin-left: 30px;
 }

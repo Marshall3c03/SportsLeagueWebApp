@@ -31,47 +31,34 @@
 {% if team.name == "Chelsea" %}
 
 <div class="honours">
-    <p><b>Current Champions League Holders</b></p>
-    <p><b>Current Super Cup Holders</b></p>
+    <h3>Honours</h3>
+    <ul>
+        <li>
+            Current Champions League Holders
+        </li>
+        <li>
+            Current Super Cup Holders
+        </li>
+    </ul>
 </div>
 
-<hr>
-
 <div class="team_position">
-    {% if team.position == 1 %}
-        <p>
-            Position: {{team.position}}st
-        </p>
-        {% elif team.position == 2 %}
-            <p>
-                Position: {{team.position}}nd
-            </p>
-        {% elif team.position == 3 %}
-        <p>
-            Position: {{team.position}}rd
-        </p>
-        {% else %}
-        <p>
-            Position: {{team.position}}th
-        </p>
-    {% endif %}
-
     <div>
         <hr>
         <p>
-            Games Played: {{team.gamesplayed}}
+            <b>Games Played: </b> {{team.gamesplayed}}
         </p>
         <p>
-            Wins: {{team.wins}} 
+            <b>Wins: </b> {{team.wins}} 
         </p>
         <p>
-            Draws: {{team.draws}}
+            <b>Draws: </b> {{team.draws}}
         </p>
         <p>
-            Loses: {{team.loses}} 
+            <b>Loses: </b> {{team.loses}} 
         </p>
         <p>
-            Points: {{team.points}}
+            <b>Points: </b> {{team.points}}
         </p>
     </div>
 
@@ -109,27 +96,9 @@
     {% endfor %}
 
 {% else %}   
-    <div class="team_position">
-        {% if team.position == 1 %}
-            <p>
-                Position: {{team.position}}st
-            </p>
-            {% elif team.position == 2 %}
-                <p>
-                    Position: {{team.position}}nd
-                </p>
-            {% elif team.position == 3 %}
-            <p>
-                Position: {{team.position}}rd
-            </p>
-            {% else %}
-            <p>
-                Position: {{team.position}}th
-            </p>
-        {% endif %}
-
-        <div>
-            <hr>
+<hr>
+        <div class="team_position">
+            
             <p>
                 Games Played: {{team.gamesplayed}}
             </p>

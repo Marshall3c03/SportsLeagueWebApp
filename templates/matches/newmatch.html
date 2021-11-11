@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-
+<div class="match_result">
 <form action="/matches" method="post">
 
   <div>
@@ -26,12 +26,12 @@
 
   <br>
 
-  <div>
+  <div class="new_match_scores">
     <label for="home_score">Home Score:</label>
     <input type="number" id="home_score" name="home_score" value="0" min="0" max="10">
   </div>
 
-  <div>
+  <div class="new_match_scores">
       <label for="away_score">Away Score:</label>
       <input type="number" id="away_score" name="away_score" value="0" min="0" max="10">
   </div>
@@ -43,4 +43,5 @@
   </div>
    
   </form>
+</div>
 {% endblock %}

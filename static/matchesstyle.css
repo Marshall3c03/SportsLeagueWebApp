@@ -87,3 +87,25 @@
 .match_club_badge {
     padding-top: 30px;
 }
+
+.home_team_select {
+    margin-top: 17px;
+    margin-left: 20px;
+}
+
+.input {
+    margin-left: 10px;
+}
+
+.submit_button {
+    margin-left: 20px;
+}
+
+.match_scores {
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+.new_match_scores {
+    margin-bottom: 10px;
+}

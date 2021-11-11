@@ -2,9 +2,16 @@
 
 {% block content %}
 
-<form action="/match/{{match.id}}" method="post">
 
+
+<form action="/match/{{match.id}}" method="post">
+    
+  
+  <div class="scores">
     <div>
+      <img src="/static/images/ClubBadges/{{match.home_team.name}}.png" alt="" width="50px">
+    </div>
+    <div class="home_team_select">
         <label for="home_team">Home Team:</label>
         <select id="home_team" name="home_team_id">
           {% for team in all_teams %}
@@ -14,8 +21,14 @@
           {% endfor %}
         </select>
     </div>
+  </div>
 
+
+  <div class="scores">
     <div>
+      <img src="/static/images/ClubBadges/{{match.away_team.name}}.png" alt="" width="50px">
+    </div>
+    <div class="home_team_select">
         <label for="away_team">Away Team:</label>
         <select id="away_team" name="away_team_id">
           {% for team in all_teams %}
@@ -25,22 +38,23 @@
           {% endfor %}
         </select>
     </div>
+  </div>
 
     <br>
 
-    <div>
+    <div class="match_scores">
         <label for="home_score">Home Score:</label>
-        <input type="number" id="home_score" name="home_score" value="{{match.home_score}}" min="0" max="10" required>
+        <input class="input" type="number" id="home_score" name="home_score" value="{{match.home_score}}" min="0" max="10" required>
     </div>
 
-    <div>
+    <div class="match_scores">
         <label for="away_score">Away Score:</label>
-        <input type="number" id="away_score" name="away_score" value="{{match.away_score}}" min="0" max="10" required>
+        <input class="input" type="number" id="away_score" name="away_score" value="{{match.away_score}}" min="0" max="10" required>
     </div>
 
     <br>
 
-    <div>
+    <div class="submit_button">
         <button type="submit">Update Match</button>
     </div>
 </form>
