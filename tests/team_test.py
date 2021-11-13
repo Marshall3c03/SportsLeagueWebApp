@@ -4,10 +4,10 @@ from models.team import Team
 class TestTeam(unittest.TestCase):
     
     def setUp(self):
-        self.testteam = Team("Chelsea",1,10,8,1,1,25)
+        self.testteam = Team("Arsenal",1,10,8,1,1,25)
         
     def test_team__has_name(self):
-        self.assertEqual("Chelsea", self.testteam.name)
+        self.assertEqual("Arsenal", self.testteam.name)
 
     def test_team__has_position(self):
         self.assertEqual(1 , self.testteam.position)
