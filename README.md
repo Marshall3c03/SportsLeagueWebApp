@@ -17,16 +17,22 @@
 
 ### Homepage
 
-![](Insert Table Page)
+![](https://i.imgur.com/ZbXA3hD.png)
 
 ### Teams
-![](Insert Teams Page)
+![](https://i.imgur.com/vTQbI43.png)
 
-### Matches
-![](Insert Matches Page)
+### Individual Team
+![](https://i.imgur.com/qaFScK1.png)
+
+### Fixtures
+![](https://i.imgur.com/7uEWgO9.png)
+
+### Individual Fixture
+![](https://i.imgur.com/Ron40Uf.png)
 
 ### About
-![](Insert About Page)
+![](https://i.imgur.com/ppTMzqx.jpg)
 
 ## How to Run
 ----------
